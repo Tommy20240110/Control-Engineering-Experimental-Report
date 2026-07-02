@@ -1,0 +1,370 @@
+=================================================================
+Task 3: Sampling Rate Effects on Frequency Response
+=================================================================
+Continuous system: G2(s) = 3/(s^3 + 5s^2 - 3s)
+
+Gain crossover frequency:
+  wc = 0.640982 rad/s
+  f1 = 0.102015 Hz
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 52 行)
+位置: run (第 100 行)] 
+
+Margin function results (continuous):
+  Gain crossover freq (Wcp) = 0.640982 rad/s
+  Phase crossover freq (Wcg) = NaN rad/s
+  Gain margin = Inf dB
+  Phase margin = -46.78 deg
+
+Using margin function crossover frequency: f1 = 0.102015 Hz
+
+=================================================================
+Discretization and Analysis
+=================================================================
+
+--- Case 1: f = 1 * f1 (Ts = 9.802441 s) ---
+  Sampling frequency fs = 0.102015 Hz
+  Nyquist frequency fn = 0.051008 Hz (0.320491 rad/s)
+  Discrete transfer function Gz(z):
+  tf - 属性:
+
+       Numerator: {[0 327.9630 1.6363e+03 3.2398]}
+     Denominator: {[1 -202.7154 201.7154 0]}
+        Variable: 'z'
+         IODelay: 0
+      InputDelay: 0
+     OutputDelay: 0
+       InputName: {''}
+       InputUnit: {''}
+      InputGroup: [1×1 struct]
+      OutputName: {''}
+      OutputUnit: {''}
+     OutputGroup: [1×1 struct]
+           Notes: [0×1 string]
+        UserData: []
+            Name: ''
+              Ts: 9.8024
+        TimeUnit: 'seconds'
+    SamplingGrid: [1×1 struct]
+
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 128 行)
+位置: run (第 100 行)] 
+
+  Frequency Response Margins:
+  Gain margin (discrete) = Inf dB
+  Phase margin (discrete) = Inf deg
+  Phase crossover freq (discrete) = NaN rad/s
+  Gain crossover freq (discrete) = NaN rad/s
+
+  Accuracy at crossover frequency wc = 0.6410 rad/s:
+  Continuous: |G(jwc)| = 1.0000 (0.00 dB), phase = 133.22 deg
+  Discrete:   |Gz(e^{jwcTs})| = 40021501069579384.0000 (332.05 dB), phase = -180.00 deg
+  Magnitude error = 332.0459 dB
+  Phase error = 313.2170 deg
+
+--- Case 2: f = 3 * f1 (Ts = 3.267480 s) ---
+  Sampling frequency fs = 0.306046 Hz
+  Nyquist frequency fn = 0.153023 Hz (0.961473 rad/s)
+  Discrete transfer function Gz(z):
+  tf - 属性:
+
+       Numerator: {[0 4.9346 10.8666 0.0942]}
+     Denominator: {[1 -6.8647 5.8647 -8.0308e-08]}
+        Variable: 'z'
+         IODelay: 0
+      InputDelay: 0
+     OutputDelay: 0
+       InputName: {''}
+       InputUnit: {''}
+      InputGroup: [1×1 struct]
+      OutputName: {''}
+      OutputUnit: {''}
+     OutputGroup: [1×1 struct]
+           Notes: [0×1 string]
+        UserData: []
+            Name: ''
+              Ts: 3.2675
+        TimeUnit: 'seconds'
+    SamplingGrid: [1×1 struct]
+
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 128 行)
+位置: run (第 100 行)] 
+
+  Frequency Response Margins:
+  Gain margin (discrete) = Inf dB
+  Phase margin (discrete) = -109.75 deg
+  Phase crossover freq (discrete) = NaN rad/s
+  Gain crossover freq (discrete) = 0.5855 rad/s
+
+  Accuracy at crossover frequency wc = 0.6410 rad/s:
+  Continuous: |G(jwc)| = 1.0000 (0.00 dB), phase = 133.22 deg
+  Discrete:   |Gz(e^{jwcTs})| = 0.8400 (-1.51 dB), phase = 64.40 deg
+  Magnitude error = 1.5148 dB
+  Phase error = 68.8169 deg
+
+--- Case 3: f = 10 * f1 (Ts = 0.980244 s) ---
+  Sampling frequency fs = 1.020154 Hz
+  Nyquist frequency fn = 0.510077 Hz (3.204909 rad/s)
+  Discrete transfer function Gz(z):
+  tf - 属性:
+
+       Numerator: {[0 0.2138 0.4444 0.0250]}
+     Denominator: {[1 -2.7045 1.7119 -0.0074]}
+        Variable: 'z'
+         IODelay: 0
+      InputDelay: 0
+     OutputDelay: 0
+       InputName: {''}
+       InputUnit: {''}
+      InputGroup: [1×1 struct]
+      OutputName: {''}
+      OutputUnit: {''}
+     OutputGroup: [1×1 struct]
+           Notes: [0×1 string]
+        UserData: []
+            Name: ''
+              Ts: 0.9802
+        TimeUnit: 'seconds'
+    SamplingGrid: [1×1 struct]
+
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 128 行)
+位置: run (第 100 行)] 
+
+  Frequency Response Margins:
+  Gain margin (discrete) = Inf dB
+  Phase margin (discrete) = -64.90 deg
+  Phase crossover freq (discrete) = NaN rad/s
+  Gain crossover freq (discrete) = 0.6349 rad/s
+
+  Accuracy at crossover frequency wc = 0.6410 rad/s:
+  Continuous: |G(jwc)| = 1.0000 (0.00 dB), phase = 133.22 deg
+  Discrete:   |Gz(e^{jwcTs})| = 0.9845 (-0.14 dB), phase = 115.13 deg
+  Magnitude error = 0.1356 dB
+  Phase error = 18.0834 deg
+
+=================================================================
+SUMMARY: Sampling Rate Effects
+=================================================================
+  Sampling Rate  |  Ts (s)  |  Gain Margin (dB) | Phase Margin (deg)
+----------------+----------+-------------------+--------------------
+  Continuous     |   N/A    |      Inf        |      -46.78
+  f = 1 * f1    |  9.802441 |      Inf        |      Inf
+  f = 3 * f1    |  3.267480 |      Inf        |      -109.75
+  f = 10 * f1    |  0.980244 |      Inf        |      -64.90
+----------------+----------+-------------------+--------------------
+
+--- Effect Analysis ---
+1. At f = f1 (lowest sampling rate):
+   - Sampling frequency equals crossover frequency.
+   - Nyquist frequency (0.05 Hz) is below/at signal content.
+   - Significant aliasing and frequency response distortion expected.
+   - Discrete system poorly matches continuous system.
+
+2. At f = 3*f1:
+   - Nyquist frequency (0.15 Hz) exceeds crossover frequency.
+   - Basic Nyquist criterion satisfied.
+   - Moderate accuracy improvement over f = f1 case.
+
+3. At f = 10*f1:
+   - High sampling rate provides good approximation.
+   - Frequency response closely matches continuous system up to high frequencies.
+   - Phase lag from ZOH discretization is minimal in the frequency range of interest.
+
+--- Conclusion ---
+Higher sampling rates yield more accurate frequency response matching.
+A sampling rate of at least 10 times the crossover frequency is recommended
+for accurate digital control system implementation.
+
+Task 3 completed successfully.
+=================================================================
+Task 3: Sampling Rate Effects on Frequency Response
+=================================================================
+Continuous system: G2(s) = 3/(s^3 + 5s^2 - 3s)
+
+Gain crossover frequency:
+  wc = 0.640982 rad/s
+  f1 = 0.102015 Hz
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 52 行)
+位置: run (第 100 行)] 
+
+Margin function results (continuous):
+  Gain crossover freq (Wcp) = 0.640982 rad/s
+  Phase crossover freq (Wcg) = NaN rad/s
+  Gain margin = Inf dB
+  Phase margin = -46.78 deg
+
+Using margin function crossover frequency: f1 = 0.102015 Hz
+
+=================================================================
+Discretization and Analysis
+=================================================================
+
+--- Case 1: f = 1 * f1 (Ts = 9.802441 s) ---
+  Sampling frequency fs = 0.102015 Hz
+  Nyquist frequency fn = 0.051008 Hz (0.320491 rad/s)
+  Discrete transfer function Gz(z):
+  tf - 属性:
+
+       Numerator: {[0 327.9630 1.6363e+03 3.2398]}
+     Denominator: {[1 -202.7154 201.7154 0]}
+        Variable: 'z'
+         IODelay: 0
+      InputDelay: 0
+     OutputDelay: 0
+       InputName: {''}
+       InputUnit: {''}
+      InputGroup: [1×1 struct]
+      OutputName: {''}
+      OutputUnit: {''}
+     OutputGroup: [1×1 struct]
+           Notes: [0×1 string]
+        UserData: []
+            Name: ''
+              Ts: 9.8024
+        TimeUnit: 'seconds'
+    SamplingGrid: [1×1 struct]
+
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 128 行)
+位置: run (第 100 行)] 
+
+  Frequency Response Margins:
+  Gain margin (discrete) = Inf dB
+  Phase margin (discrete) = Inf deg
+  Phase crossover freq (discrete) = NaN rad/s
+  Gain crossover freq (discrete) = NaN rad/s
+
+  Accuracy at crossover frequency wc = 0.6410 rad/s:
+  Continuous: |G(jwc)| = 1.0000 (0.00 dB), phase = 133.22 deg
+  Discrete:   |Gz(e^{jwcTs})| = 40021501069579384.0000 (332.05 dB), phase = -180.00 deg
+  Magnitude error = 332.0459 dB
+  Phase error = 313.2170 deg
+
+--- Case 2: f = 3 * f1 (Ts = 3.267480 s) ---
+  Sampling frequency fs = 0.306046 Hz
+  Nyquist frequency fn = 0.153023 Hz (0.961473 rad/s)
+  Discrete transfer function Gz(z):
+  tf - 属性:
+
+       Numerator: {[0 4.9346 10.8666 0.0942]}
+     Denominator: {[1 -6.8647 5.8647 -8.0308e-08]}
+        Variable: 'z'
+         IODelay: 0
+      InputDelay: 0
+     OutputDelay: 0
+       InputName: {''}
+       InputUnit: {''}
+      InputGroup: [1×1 struct]
+      OutputName: {''}
+      OutputUnit: {''}
+     OutputGroup: [1×1 struct]
+           Notes: [0×1 string]
+        UserData: []
+            Name: ''
+              Ts: 3.2675
+        TimeUnit: 'seconds'
+    SamplingGrid: [1×1 struct]
+
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 128 行)
+位置: run (第 100 行)] 
+
+  Frequency Response Margins:
+  Gain margin (discrete) = Inf dB
+  Phase margin (discrete) = -109.75 deg
+  Phase crossover freq (discrete) = NaN rad/s
+  Gain crossover freq (discrete) = 0.5855 rad/s
+
+  Accuracy at crossover frequency wc = 0.6410 rad/s:
+  Continuous: |G(jwc)| = 1.0000 (0.00 dB), phase = 133.22 deg
+  Discrete:   |Gz(e^{jwcTs})| = 0.8400 (-1.51 dB), phase = 64.40 deg
+  Magnitude error = 1.5148 dB
+  Phase error = 68.8169 deg
+
+--- Case 3: f = 10 * f1 (Ts = 0.980244 s) ---
+  Sampling frequency fs = 1.020154 Hz
+  Nyquist frequency fn = 0.510077 Hz (3.204909 rad/s)
+  Discrete transfer function Gz(z):
+  tf - 属性:
+
+       Numerator: {[0 0.2138 0.4444 0.0250]}
+     Denominator: {[1 -2.7045 1.7119 -0.0074]}
+        Variable: 'z'
+         IODelay: 0
+      InputDelay: 0
+     OutputDelay: 0
+       InputName: {''}
+       InputUnit: {''}
+      InputGroup: [1×1 struct]
+      OutputName: {''}
+      OutputUnit: {''}
+     OutputGroup: [1×1 struct]
+           Notes: [0×1 string]
+        UserData: []
+            Name: ''
+              Ts: 0.9802
+        TimeUnit: 'seconds'
+    SamplingGrid: [1×1 struct]
+
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task3 (第 128 行)
+位置: run (第 100 行)] 
+
+  Frequency Response Margins:
+  Gain margin (discrete) = Inf dB
+  Phase margin (discrete) = -64.90 deg
+  Phase crossover freq (discrete) = NaN rad/s
+  Gain crossover freq (discrete) = 0.6349 rad/s
+
+  Accuracy at crossover frequency wc = 0.6410 rad/s:
+  Continuous: |G(jwc)| = 1.0000 (0.00 dB), phase = 133.22 deg
+  Discrete:   |Gz(e^{jwcTs})| = 0.9845 (-0.14 dB), phase = 115.13 deg
+  Magnitude error = 0.1356 dB
+  Phase error = 18.0834 deg
+
+=================================================================
+SUMMARY: Sampling Rate Effects
+=================================================================
+  Sampling Rate  |  Ts (s)  |  Gain Margin (dB) | Phase Margin (deg)
+----------------+----------+-------------------+--------------------
+  Continuous     |   N/A    |      Inf        |      -46.78
+  f = 1 * f1    |  9.802441 |      Inf        |      Inf
+  f = 3 * f1    |  3.267480 |      Inf        |      -109.75
+  f = 10 * f1    |  0.980244 |      Inf        |      -64.90
+----------------+----------+-------------------+--------------------
+
+--- Effect Analysis ---
+1. At f = f1 (lowest sampling rate):
+   - Sampling frequency equals crossover frequency.
+   - Nyquist frequency (0.05 Hz) is below/at signal content.
+   - Significant aliasing and frequency response distortion expected.
+   - Discrete system poorly matches continuous system.
+
+2. At f = 3*f1:
+   - Nyquist frequency (0.15 Hz) exceeds crossover frequency.
+   - Basic Nyquist criterion satisfied.
+   - Moderate accuracy improvement over f = f1 case.
+
+3. At f = 10*f1:
+   - High sampling rate provides good approximation.
+   - Frequency response closely matches continuous system up to high frequencies.
+   - Phase lag from ZOH discretization is minimal in the frequency range of interest.
+
+--- Conclusion ---
+Higher sampling rates yield more accurate frequency response matching.
+A sampling rate of at least 10 times the crossover frequency is recommended
+for accurate digital control system implementation.
+
+Task 3 completed successfully.

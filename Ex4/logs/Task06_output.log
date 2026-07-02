@@ -1,0 +1,92 @@
+Task 6: Non-Minimum Phase System Analysis
+
+--- System G1 ---
+G1(s) = 6*(-s+4) / (s^2 * (0.5s+1) * (0.1s+1))
+Zeros: 4.0000 
+Poles: 0.0000 0.0000 -10.0000 -2.0000 
+RHP zeros detected at: 4.0000 
+
+--- System G2 ---
+G2(s) = (10s^3 - 60s^2 + 110s + 60) / (s^4 + 17s^3 + 82s^2 + 130s + 100)
+Zeros: 3.2174 3.2174 -0.4348 
+Poles: -10.0000 -5.0000 -1.0000 -1.0000 
+RHP zeros detected at: 3.2174 3.2174 
+
+Plotting G1 frequency response...
+Plotting G2 frequency response...
+
+=== Analysis: Why Are These Non-Minimum Phase Systems? ===
+Definition: A system is non-minimum phase if it has zeros and/or poles in
+the right-half plane (RHP), or if it contains time delays.
+
+G1 analysis:
+  G1 has a RHP zero at s = 4.0000
+  This is evident from the numerator term (-s+4) = -(s-4).
+  The RHP zero causes:
+    - Additional phase lag in the Bode plot (phase drops below -180 deg).
+    - Initial undershoot in the step response (response goes negative first).
+    - For minimum-phase systems, phase would be near -180.0 deg at high frequencies,
+      but G1 shows more phase lag due to the RHP zero.
+
+G2 analysis:
+  G2 has RHP zeros at complex locations:
+    s = 3.2174 + 1.8564j
+    s = 3.2174 + -1.8564j
+  G2 has all LHP poles (stable), but RHP zeros make it non-minimum phase.
+  The RHP complex zeros cause:
+    - Unusual phase behavior in the Bode plot (more phase lag than expected).
+    - Initial undershoot in the step response.
+    - The phase curve drops significantly below what a minimum-phase system
+      with the same magnitude response would exhibit.
+
+Key characteristics of non-minimum phase systems in frequency domain:
+  1. The phase lag exceeds the minimum possible for the given magnitude.
+  2. The Bode phase plot shows unusual behavior (non-monotonic or excessive lag).
+  3. The Nyquist plot shows unusual encirclement patterns.
+  4. Step response shows initial undershoot (goes opposite to input direction).
+Task 6: Non-Minimum Phase System Analysis
+
+--- System G1 ---
+G1(s) = 6*(-s+4) / (s^2 * (0.5s+1) * (0.1s+1))
+Zeros: 4.0000 
+Poles: 0.0000 0.0000 -10.0000 -2.0000 
+RHP zeros detected at: 4.0000 
+
+--- System G2 ---
+G2(s) = (10s^3 - 60s^2 + 110s + 60) / (s^4 + 17s^3 + 82s^2 + 130s + 100)
+Zeros: 3.2174 3.2174 -0.4348 
+Poles: -10.0000 -5.0000 -1.0000 -1.0000 
+RHP zeros detected at: 3.2174 3.2174 
+
+Plotting G1 frequency response...
+Plotting G2 frequency response...
+
+=== Analysis: Why Are These Non-Minimum Phase Systems? ===
+Definition: A system is non-minimum phase if it has zeros and/or poles in
+the right-half plane (RHP), or if it contains time delays.
+
+G1 analysis:
+  G1 has a RHP zero at s = 4.0000
+  This is evident from the numerator term (-s+4) = -(s-4).
+  The RHP zero causes:
+    - Additional phase lag in the Bode plot (phase drops below -180 deg).
+    - Initial undershoot in the step response (response goes negative first).
+    - For minimum-phase systems, phase would be near -180.0 deg at high frequencies,
+      but G1 shows more phase lag due to the RHP zero.
+
+G2 analysis:
+  G2 has RHP zeros at complex locations:
+    s = 3.2174 + 1.8564j
+    s = 3.2174 + -1.8564j
+  G2 has all LHP poles (stable), but RHP zeros make it non-minimum phase.
+  The RHP complex zeros cause:
+    - Unusual phase behavior in the Bode plot (more phase lag than expected).
+    - Initial undershoot in the step response.
+    - The phase curve drops significantly below what a minimum-phase system
+      with the same magnitude response would exhibit.
+
+Key characteristics of non-minimum phase systems in frequency domain:
+  1. The phase lag exceeds the minimum possible for the given magnitude.
+  2. The Bode phase plot shows unusual behavior (non-monotonic or excessive lag).
+  3. The Nyquist plot shows unusual encirclement patterns.
+  4. Step response shows initial undershoot (goes opposite to input direction).

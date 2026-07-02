@@ -1,0 +1,96 @@
+Task 3: Second-Order System Step Response Analysis
+
+Original system:
+  G(s) = 20.00/(s^2 + 2.00s + 20.00)
+  omega_n = 4.4721, zeta = 0.2236
+
+--- Part (1a): Damping Ratio Variation ---
+  zeta = 0.22: G(s) = 20.00/(s^2 + 2.00s + 20.00)
+  zeta = 0.50: G(s) = 20.00/(s^2 + 4.47s + 20.00)
+  zeta = 3.00: G(s) = 20.00/(s^2 + 26.83s + 20.00)
+
+--- Part (1b): Natural Frequency Variation ---
+  omega_n = 1.0541: G(s) = 1.11/(s^2 + 0.47s + 1.11)
+  omega_n = 3.1623: G(s) = 10.00/(s^2 + 1.41s + 10.00)
+  omega_n = 9.4868: G(s) = 90.00/(s^2 + 4.24s + 90.00)
+  omega_n = 4.4721: G(s) = 20.00/(s^2 + 2.00s + 20.00)
+
+--- Part (2): Comparison of Systems G1-G4 ---
+  G1(s) = 3s/(s^2+3s+10): initial value = 0.00, steady-state = -0.00
+  G2(s) = (3s+10)/(s^2+3s+10): initial value = 0.00, steady-state = 1.00
+  G3(s) = (s^2+s)/(s^2+3s+10): initial value = 1.00, steady-state = -0.01
+  G4(s) = (s^2+s+10)/(s^2+3s+10): initial value = 1.00, steady-state = 1.00
+
+=== Analysis ===
+Part (1a) - Damping Ratio Effect:
+  As zeta increases, overshoot decreases and rise time increases.
+  zeta=0.22 (original): underdamped, moderate overshoot.
+  zeta=0.50: underdamped, reduced overshoot.
+  zeta=3.00: overdamped, no overshoot, sluggish response.
+
+Part (1b) - Natural Frequency Effect:
+  Larger omega_n shifts the response left (faster dynamics).
+  omega_n=1.05 (sqrt(10)/3): slow response, low-frequency oscillation.
+  omega_n=3.16 (sqrt(10)): moderate speed.
+  omega_n=9.49 (3*sqrt(10)): fast response, high-frequency oscillation.
+  omega_n=4.47 (sqrt(20), original): between sqrt(10) and 3*sqrt(10).
+
+Part (2) - Zero and Steady-State Analysis:
+  G1: zero at s=0 (derivative action), strictly proper (num deg < den deg).
+      Initial value = 0, steady-state = 0.
+  G2: zero at s=-10/3, strictly proper. Initial value = 0, steady-state = 1.
+  G3: zeros at s=0 and s=-1, proper (num deg = den deg).
+      Initial value = 1 (non-zero), steady-state = 0.
+  G4: complex zeros, proper. Initial value = 1 (non-zero), steady-state = 1.
+  Zeros affect the transient shape: LHP zeros increase overshoot;
+  zeros at the origin add derivative action (initial zero output);
+  non-zero initial values arise when numerator degree = denominator degree.
+  Steady-state value equals the DC gain G(0).
+Task 3: Second-Order System Step Response Analysis
+
+Original system:
+  G(s) = 20.00/(s^2 + 2.00s + 20.00)
+  omega_n = 4.4721, zeta = 0.2236
+
+--- Part (1a): Damping Ratio Variation ---
+  zeta = 0.22: G(s) = 20.00/(s^2 + 2.00s + 20.00)
+  zeta = 0.50: G(s) = 20.00/(s^2 + 4.47s + 20.00)
+  zeta = 3.00: G(s) = 20.00/(s^2 + 26.83s + 20.00)
+
+--- Part (1b): Natural Frequency Variation ---
+  omega_n = 1.0541: G(s) = 1.11/(s^2 + 0.47s + 1.11)
+  omega_n = 3.1623: G(s) = 10.00/(s^2 + 1.41s + 10.00)
+  omega_n = 9.4868: G(s) = 90.00/(s^2 + 4.24s + 90.00)
+  omega_n = 4.4721: G(s) = 20.00/(s^2 + 2.00s + 20.00)
+
+--- Part (2): Comparison of Systems G1-G4 ---
+  G1(s) = 3s/(s^2+3s+10): initial value = 0.00, steady-state = -0.00
+  G2(s) = (3s+10)/(s^2+3s+10): initial value = 0.00, steady-state = 1.00
+  G3(s) = (s^2+s)/(s^2+3s+10): initial value = 1.00, steady-state = -0.01
+  G4(s) = (s^2+s+10)/(s^2+3s+10): initial value = 1.00, steady-state = 1.00
+
+=== Analysis ===
+Part (1a) - Damping Ratio Effect:
+  As zeta increases, overshoot decreases and rise time increases.
+  zeta=0.22 (original): underdamped, moderate overshoot.
+  zeta=0.50: underdamped, reduced overshoot.
+  zeta=3.00: overdamped, no overshoot, sluggish response.
+
+Part (1b) - Natural Frequency Effect:
+  Larger omega_n shifts the response left (faster dynamics).
+  omega_n=1.05 (sqrt(10)/3): slow response, low-frequency oscillation.
+  omega_n=3.16 (sqrt(10)): moderate speed.
+  omega_n=9.49 (3*sqrt(10)): fast response, high-frequency oscillation.
+  omega_n=4.47 (sqrt(20), original): between sqrt(10) and 3*sqrt(10).
+
+Part (2) - Zero and Steady-State Analysis:
+  G1: zero at s=0 (derivative action), strictly proper (num deg < den deg).
+      Initial value = 0, steady-state = 0.
+  G2: zero at s=-10/3, strictly proper. Initial value = 0, steady-state = 1.
+  G3: zeros at s=0 and s=-1, proper (num deg = den deg).
+      Initial value = 1 (non-zero), steady-state = 0.
+  G4: complex zeros, proper. Initial value = 1 (non-zero), steady-state = 1.
+  Zeros affect the transient shape: LHP zeros increase overshoot;
+  zeros at the origin add derivative action (initial zero output);
+  non-zero initial values arise when numerator degree = denominator degree.
+  Steady-state value equals the DC gain G(0).

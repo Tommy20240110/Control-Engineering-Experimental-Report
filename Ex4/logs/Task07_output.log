@@ -1,0 +1,42 @@
+Task 7: Step Response Performance Metrics and Frequency Response
+
+System A: Ga(s) = 2/(s^2 + 2s + 2)
+System B: Gb(s) = 1/(2s^3 + 3s^2 + 3s + 1)
+
+--- Part (1a): Step Response with stepinfo() ---
+System A:
+  Rise Time: 1.5195 s
+  Peak Time: 3.1315 s
+  Settling Time (2%): 4.2163 s
+  Overshoot: 4.32 %
+  Peak Value: 1.0432
+{无法识别的字段名称 "SteadyStateValue"。
+
+出错 task7 (第 27 行)
+fprintf('  Steady-State Value: %.4f\n\n', S_a.SteadyStateValue);
+                                          ^^^^^^^^^^^^^^^^^^^^
+出错 run (第 100 行)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+Task 7: Step Response Performance Metrics and Frequency Response
+
+System A: Ga(s) = 2/(s^2 + 2s + 2)
+System B: Gb(s) = 1/(2s^3 + 3s^2 + 3s + 1)
+
+--- Part (1a): Step Response with stepinfo() ---
+System A:
+  Rise Time: 1.5195 s
+  Peak Time: 3.1315 s
+  Settling Time (2%): 4.2163 s
+  Overshoot: 4.32 %
+  Peak Value: 1.0432
+{无法识别的字段名称 "SteadyStateValue"。
+
+出错 task7 (第 27 行)
+fprintf('  Steady-State Value: %.4f\n\n', S_a.SteadyStateValue);
+                                          ^^^^^^^^^^^^^^^^^^^^
+出错 run (第 100 行)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 

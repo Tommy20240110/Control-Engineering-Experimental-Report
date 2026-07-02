@@ -1,0 +1,344 @@
+=================================================================
+Task 2: System Controllability and Observability Analysis
+Transfer function: G(s) = (s + a) / (s^3 + 10s^2 + 27s + 8)
+a = -2, 0, +2
+=================================================================
+
+========== a = -2 ==========
+State-space representation (controller canonical form):
+A =
+   -10   -27    -8
+     1     0     0
+     0     1     0
+
+B =
+     1
+     0
+     0
+
+C =
+     0     1    -2
+
+D = 0
+Controllability matrix Co =
+     1   -10    73
+     0     1   -10
+     0     0     1
+
+Rank(Co) = 3 (system order n = 3)
+>> System is CONTROLLABLE.
+
+Observability matrix Ob =
+     0     1    -2
+     1    -2     0
+   -12   -27    -8
+
+Rank(Ob) = 3 (system order n = 3)
+>> System is OBSERVABLE.
+
+--- Gramian Verification ---
+System poles: -4.8315  -4.8315  -0.3369  
+Controllability Gramian Wc =
+    0.0515    0.0000   -0.0019
+    0.0000    0.0019    0.0000
+   -0.0019    0.0000    0.0024
+
+Observability Gramian Wo =
+    0.0115    0.1145    0.2500
+    0.1145    1.2042    2.5916
+    0.2500    2.5916    9.6660
+
+Singular values of Wc: 5.160072e-02  2.311495e-03  1.908397e-03  
+Singular values of Wo: 1.040378e+01  4.773493e-01  5.545944e-04  
+Rank(Wc) = 3, Rank(Wo) = 3
+Gramian verification: CONTROLLABLE.
+Gramian verification: OBSERVABLE.
+
+========== a = 0 ==========
+State-space representation (controller canonical form):
+A =
+   -10   -27    -8
+     1     0     0
+     0     1     0
+
+B =
+     1
+     0
+     0
+
+C =
+     0     1     0
+
+D = 0
+Controllability matrix Co =
+     1   -10    73
+     0     1   -10
+     0     0     1
+
+Rank(Co) = 3 (system order n = 3)
+>> System is CONTROLLABLE.
+
+Observability matrix Ob =
+     0     1     0
+     1     0     0
+   -10   -27    -8
+
+Rank(Ob) = 3 (system order n = 3)
+>> System is OBSERVABLE.
+
+--- Gramian Verification ---
+System poles: -4.8315  -4.8315  -0.3369  
+Controllability Gramian Wc =
+    0.0515    0.0000   -0.0019
+    0.0000    0.0019    0.0000
+   -0.0019    0.0000    0.0024
+
+Observability Gramian Wo =
+    0.0019    0.0191    0.0000
+    0.0191    0.2424    0.0153
+    0.0000    0.0153    0.1527
+
+Singular values of Wc: 5.160072e-02  2.311495e-03  1.908397e-03  
+Singular values of Wo: 2.463447e-01  1.502082e-01  3.936956e-04  
+Rank(Wc) = 3, Rank(Wo) = 3
+Gramian verification: CONTROLLABLE.
+Gramian verification: OBSERVABLE.
+
+========== a = 2 ==========
+State-space representation (controller canonical form):
+A =
+   -10   -27    -8
+     1     0     0
+     0     1     0
+
+B =
+     1
+     0
+     0
+
+C =
+     0     1     2
+
+D = 0
+Controllability matrix Co =
+     1   -10    73
+     0     1   -10
+     0     0     1
+
+Rank(Co) = 3 (system order n = 3)
+>> System is CONTROLLABLE.
+
+Observability matrix Ob =
+     0     1     2
+     1     2     0
+    -8   -27    -8
+
+Rank(Ob) = 3 (system order n = 3)
+>> System is OBSERVABLE.
+
+--- Gramian Verification ---
+System poles: -4.8315  -4.8315  -0.3369  
+Controllability Gramian Wc =
+    0.0515    0.0000   -0.0019
+    0.0000    0.0019    0.0000
+   -0.0019    0.0000    0.0024
+
+Observability Gramian Wo =
+    0.0115    0.1145    0.2500
+    0.1145    1.2042    2.5916
+    0.2500    2.5916    5.6660
+
+Singular values of Wc: 5.160072e-02  2.311495e-03  1.908397e-03  
+Singular values of Wo: 6.865706e+00  1.555557e-02  4.177363e-04  
+Rank(Wc) = 3, Rank(Wo) = 3
+Gramian verification: CONTROLLABLE.
+Gramian verification: OBSERVABLE.
+
+=================================================================
+SUMMARY OF RESULTS
+=================================================================
+  a   | rank(Co) | rank(Ob) | Controllable | Observable
+------+----------+----------+--------------+------------
+  -2  |    3     |    3     |     Yes       |    Yes
+   0  |    3     |    3     |     Yes       |    Yes
+   2  |    3     |    3     |     Yes       |    Yes
+=================================================================
+Note: System order n = 3. Full rank (n) means controllable/observable.
+=================================================================
+Figure 1 saved: Task02_Figure_01.png (Pole-Zero Maps)
+Figure 2 saved: Task02_Figure_02.png (Step Response Comparison)
+Figure 3 saved: Task02_Figure_03.png (Bode Diagram Comparison)
+
+Task 2 completed successfully.
+=================================================================
+Task 2: System Controllability and Observability Analysis
+Transfer function: G(s) = (s + a) / (s^3 + 10s^2 + 27s + 8)
+a = -2, 0, +2
+=================================================================
+
+========== a = -2 ==========
+State-space representation (controller canonical form):
+A =
+   -10   -27    -8
+     1     0     0
+     0     1     0
+
+B =
+     1
+     0
+     0
+
+C =
+     0     1    -2
+
+D = 0
+Controllability matrix Co =
+     1   -10    73
+     0     1   -10
+     0     0     1
+
+Rank(Co) = 3 (system order n = 3)
+>> System is CONTROLLABLE.
+
+Observability matrix Ob =
+     0     1    -2
+     1    -2     0
+   -12   -27    -8
+
+Rank(Ob) = 3 (system order n = 3)
+>> System is OBSERVABLE.
+
+--- Gramian Verification ---
+System poles: -4.8315  -4.8315  -0.3369  
+Controllability Gramian Wc =
+    0.0515    0.0000   -0.0019
+    0.0000    0.0019    0.0000
+   -0.0019    0.0000    0.0024
+
+Observability Gramian Wo =
+    0.0115    0.1145    0.2500
+    0.1145    1.2042    2.5916
+    0.2500    2.5916    9.6660
+
+Singular values of Wc: 5.160072e-02  2.311495e-03  1.908397e-03  
+Singular values of Wo: 1.040378e+01  4.773493e-01  5.545944e-04  
+Rank(Wc) = 3, Rank(Wo) = 3
+Gramian verification: CONTROLLABLE.
+Gramian verification: OBSERVABLE.
+
+========== a = 0 ==========
+State-space representation (controller canonical form):
+A =
+   -10   -27    -8
+     1     0     0
+     0     1     0
+
+B =
+     1
+     0
+     0
+
+C =
+     0     1     0
+
+D = 0
+Controllability matrix Co =
+     1   -10    73
+     0     1   -10
+     0     0     1
+
+Rank(Co) = 3 (system order n = 3)
+>> System is CONTROLLABLE.
+
+Observability matrix Ob =
+     0     1     0
+     1     0     0
+   -10   -27    -8
+
+Rank(Ob) = 3 (system order n = 3)
+>> System is OBSERVABLE.
+
+--- Gramian Verification ---
+System poles: -4.8315  -4.8315  -0.3369  
+Controllability Gramian Wc =
+    0.0515    0.0000   -0.0019
+    0.0000    0.0019    0.0000
+   -0.0019    0.0000    0.0024
+
+Observability Gramian Wo =
+    0.0019    0.0191    0.0000
+    0.0191    0.2424    0.0153
+    0.0000    0.0153    0.1527
+
+Singular values of Wc: 5.160072e-02  2.311495e-03  1.908397e-03  
+Singular values of Wo: 2.463447e-01  1.502082e-01  3.936956e-04  
+Rank(Wc) = 3, Rank(Wo) = 3
+Gramian verification: CONTROLLABLE.
+Gramian verification: OBSERVABLE.
+
+========== a = 2 ==========
+State-space representation (controller canonical form):
+A =
+   -10   -27    -8
+     1     0     0
+     0     1     0
+
+B =
+     1
+     0
+     0
+
+C =
+     0     1     2
+
+D = 0
+Controllability matrix Co =
+     1   -10    73
+     0     1   -10
+     0     0     1
+
+Rank(Co) = 3 (system order n = 3)
+>> System is CONTROLLABLE.
+
+Observability matrix Ob =
+     0     1     2
+     1     2     0
+    -8   -27    -8
+
+Rank(Ob) = 3 (system order n = 3)
+>> System is OBSERVABLE.
+
+--- Gramian Verification ---
+System poles: -4.8315  -4.8315  -0.3369  
+Controllability Gramian Wc =
+    0.0515    0.0000   -0.0019
+    0.0000    0.0019    0.0000
+   -0.0019    0.0000    0.0024
+
+Observability Gramian Wo =
+    0.0115    0.1145    0.2500
+    0.1145    1.2042    2.5916
+    0.2500    2.5916    5.6660
+
+Singular values of Wc: 5.160072e-02  2.311495e-03  1.908397e-03  
+Singular values of Wo: 6.865706e+00  1.555557e-02  4.177363e-04  
+Rank(Wc) = 3, Rank(Wo) = 3
+Gramian verification: CONTROLLABLE.
+Gramian verification: OBSERVABLE.
+
+=================================================================
+SUMMARY OF RESULTS
+=================================================================
+  a   | rank(Co) | rank(Ob) | Controllable | Observable
+------+----------+----------+--------------+------------
+  -2  |    3     |    3     |     Yes       |    Yes
+   0  |    3     |    3     |     Yes       |    Yes
+   2  |    3     |    3     |     Yes       |    Yes
+=================================================================
+Note: System order n = 3. Full rank (n) means controllable/observable.
+=================================================================
+Figure 1 saved: Task02_Figure_01.png (Pole-Zero Maps)
+Figure 2 saved: Task02_Figure_02.png (Step Response Comparison)
+Figure 3 saved: Task02_Figure_03.png (Bode Diagram Comparison)
+
+Task 2 completed successfully.

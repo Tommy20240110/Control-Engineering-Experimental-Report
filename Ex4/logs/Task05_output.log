@@ -1,0 +1,68 @@
+Task 5: Frequency-Domain Stability Analysis and Optimal Gain
+
+Base system: G0(s) = (s+1) / (s^2 * (0.1s + 1))
+Poles: s = 0 (double), s = -10
+
+--- Part 1: Bode Diagram for k = 1 ---
+  k = 1: GM = Inf (Inf dB) at NaN rad/s
+        PM = 44.4594 deg at 1.2647 rad/s
+
+Frequency-domain stability analysis for k=1:
+  Open-loop poles: two at origin (marginally stable), one at s=-10 (stable).
+  Nyquist criterion: For a Type 2 system, check encirclements of -1.
+  PM = 44.46 deg > 0 -> System is closed-loop stable.
+
+--- Part 2: Optimal Gain for Maximum Phase Margin ---
+  Frequency sweep results:
+  Maximum phase of G0(jw): -125.0968 deg at w = 3.1612 rad/s
+  |G0(jw_opt)| = 0.3164
+  Optimal k = 1/|G0(jw_opt)| = 3.1610
+  Maximum phase margin: 54.9032 deg
+
+  Computing phase margin for a range of k values...
+  From PM vs k sweep: k_opt = 3.1405, max PM = 54.9027 deg
+
+  Optimal k = 3.1405:
+    GM = Inf (Inf dB)
+    PM = 54.9027 deg
+
+=== Analysis ===
+1. The system has two integrators (Type 2), making it conditionally stable.
+2. For k=1, the system is stable with PM = 44.46 deg.
+3. The phase of G0(jw) remains above -180 deg for all w.
+4. Maximum PM = 54.90 deg is achieved at k = 3.14.
+5. Beyond the optimal k, PM decreases as the crossover frequency shifts.
+Task 5: Frequency-Domain Stability Analysis and Optimal Gain
+
+Base system: G0(s) = (s+1) / (s^2 * (0.1s + 1))
+Poles: s = 0 (double), s = -10
+
+--- Part 1: Bode Diagram for k = 1 ---
+  k = 1: GM = Inf (Inf dB) at NaN rad/s
+        PM = 44.4594 deg at 1.2647 rad/s
+
+Frequency-domain stability analysis for k=1:
+  Open-loop poles: two at origin (marginally stable), one at s=-10 (stable).
+  Nyquist criterion: For a Type 2 system, check encirclements of -1.
+  PM = 44.46 deg > 0 -> System is closed-loop stable.
+
+--- Part 2: Optimal Gain for Maximum Phase Margin ---
+  Frequency sweep results:
+  Maximum phase of G0(jw): -125.0968 deg at w = 3.1612 rad/s
+  |G0(jw_opt)| = 0.3164
+  Optimal k = 1/|G0(jw_opt)| = 3.1610
+  Maximum phase margin: 54.9032 deg
+
+  Computing phase margin for a range of k values...
+  From PM vs k sweep: k_opt = 3.1405, max PM = 54.9027 deg
+
+  Optimal k = 3.1405:
+    GM = Inf (Inf dB)
+    PM = 54.9027 deg
+
+=== Analysis ===
+1. The system has two integrators (Type 2), making it conditionally stable.
+2. For k=1, the system is stable with PM = 44.46 deg.
+3. The phase of G0(jw) remains above -180 deg for all w.
+4. Maximum PM = 54.90 deg is achieved at k = 3.14.
+5. Beyond the optimal k, PM decreases as the crossover frequency shifts.

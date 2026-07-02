@@ -1,0 +1,44 @@
+Task 4: Open-Loop Frequency Characteristics with Gain/Phase Margins
+
+System: G(s) = K / (s(s+1)(s+2))
+
+--- K = 1.5 ---
+  Gain Margin: 4.0000 (12.04 dB) at 1.4142 rad/s
+  Phase Margin: 41.5352 deg at 0.6118 rad/s
+
+--- K = 15.0 ---
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task4 (第 19 行)
+位置: run (第 100 行)] 
+  Gain Margin: 0.4000 (-7.96 dB) at 1.4142 rad/s
+  Phase Margin: -22.1691 deg at 2.1518 rad/s
+
+Analysis:
+  When K = 1.5: System has positive gain margin and phase margin -> stable.
+  When K = 15: Gain margin decreases, phase margin decreases.
+  The system becomes less stable as K increases (closer to instability).
+  Gain margin indicates how much gain can increase before instability.
+  Phase margin indicates how much phase lag can be added before instability.
+Task 4: Open-Loop Frequency Characteristics with Gain/Phase Margins
+
+System: G(s) = K / (s(s+1)(s+2))
+
+--- K = 1.5 ---
+  Gain Margin: 4.0000 (12.04 dB) at 1.4142 rad/s
+  Phase Margin: 41.5352 deg at 0.6118 rad/s
+
+--- K = 15.0 ---
+[警告: 闭环系统不稳定。] 
+[> 位置：DynamicSystem/margin (第 89 行)
+位置: task4 (第 19 行)
+位置: run (第 100 行)] 
+  Gain Margin: 0.4000 (-7.96 dB) at 1.4142 rad/s
+  Phase Margin: -22.1691 deg at 2.1518 rad/s
+
+Analysis:
+  When K = 1.5: System has positive gain margin and phase margin -> stable.
+  When K = 15: Gain margin decreases, phase margin decreases.
+  The system becomes less stable as K increases (closer to instability).
+  Gain margin indicates how much gain can increase before instability.
+  Phase margin indicates how much phase lag can be added before instability.

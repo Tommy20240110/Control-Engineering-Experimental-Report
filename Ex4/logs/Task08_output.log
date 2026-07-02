@@ -1,0 +1,139 @@
+Task 8: Time Delay Systems and Smith Predictor
+
+Plant: G(s) = 1/(s^2 + 2s + 2)
+Time delay: tau = 1.0 s
+
+Controller: C(s) = 2.0 (P controller)
+
+Pade approximation of e^(-tau*s) (order 3):
+
+G_delay =
+ 
+  -s^3 + 12 s^2 - 60 s + 120
+  --------------------------
+  s^3 + 12 s^2 + 60 s + 120
+ 
+连续时间传递函数。
+
+Delayed plant (G(s) * e^(-tau*s), Pade approximation):
+
+--- Part (1): Step Response with Pade + feedback() ---
+Undelayed closed-loop (ideal):
+Delayed closed-loop (regular feedback with Pade):
+
+--- Part (2): Smith Predictor ---
+Smith predictor closed-loop (theoretical):
+  G_cl_smith = C*G*e^(-tau*s) / (1 + C*G)
+  Characteristic equation: 1 + C*G = 0 (delay removed from feedback)
+
+Equivalent Smith predictor controller:
+  C_eq = C / (1 + C*G*(1 - e^(-tau*s)))
+
+Computing step responses...
+Creating comparison plots...
+Figure 1 saved: Step response comparison.
+Creating Smith predictor validation plot...
+Figure 2 saved: Smith predictor validation.
+Creating Pade order comparison...
+Figure 3 saved: Pade order comparison.
+
+--- Performance Comparison ---
+Undelayed:
+  Rise Time: Error writing to output stream.
+iostream stream error
+Undelayed system: stable
+Delayed (regular feedback):
+  Rise Time: Error writing to output stream.
+iostream stream error
+ s, Settling Time: 23.248 s, Overshoot: 72.4 %
+Smith Predictor:
+  Rise Time: Error writing to output stream.
+iostream stream error
+Smith predictor: stepinfo failed
+
+=== Analysis ===
+1. The time delay e^(-tau*s) adds phase lag to the open-loop system.
+   This reduces the phase margin and can cause instability.
+
+2. Pade approximation converts the delay into a rational transfer function.
+   Higher-order approximations are more accurate but increase system order.
+
+3. Smith predictor principle:
+   An internal plant model G_hat(s) and delay model e^(-tau_hat*s) are used
+   to "remove" the delay from the feedback loop.
+   The resulting closed-loop has the characteristic equation 1 + C(s)G(s) = 0,
+   which is independent of the time delay.
+   The delay only appears in the numerator: G_cl = C*G*e^(-tau*s)/(1 + C*G).
+
+4. Smith predictor effectively recovers the undelayed response shape,
+   shifted by the time delay tau.
+Task 8: Time Delay System and Smith Predictor (Simulink)
+
+Plant: G(s) = 1/(s^2 + 2s + 2)
+Time delay: tau = 1.0 s
+
+Part (1): Building Simulink model with time delay...
+  Running simulation...
+  Model saved: results/figures/Task08_Model_Delay.slx
+{函数或变量 't_delay' 无法识别。
+
+出错 task8 (第 74 行)
+plot(t_delay, y_delay, 'b-', 'LineWidth', 1.5);
+     ^^^^^^^
+出错 run (第 100 行)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+Task 8: Time Delay System and Smith Predictor (Simulink)
+
+Plant: G(s) = 1/(s^2 + 2s + 2)
+Time delay: tau = 1.0 s
+
+Part (1): Building Simulink model with time delay...
+  Running simulation...
+  Simulink model saved: results/figures/Task08_Model_Delay.slx
+{错误使用 Simulink.SimulationData.Dataset/plot
+输入参数太多。
+
+出错 task8 (第 73 行)
+plot(t_delay, y_delay, 'b-', 'LineWidth', 1.5);
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+出错 run (第 100 行)
+evalin('caller', strcat(scriptStem, ';'));
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+} 
+Task 8: Time Delay System and Smith Predictor (Simulink)
+
+Plant: G(s) = 1/(s^2 + 2s + 2)
+Time delay: tau = 1.0 s
+
+Part (1): Building Simulink model with time delay...
+  Running simulation...
+  Simulink model saved: results/figures/Task08_Model_Delay.slx
+  Figure 1 saved.
+
+Part (2): Building Smith Predictor Simulink model...
+  Running Smith predictor simulation...
+  Simulink model saved: results/figures/Task08_Model_Smith.slx
+  Figure 2 saved.
+
+Part (3): Comparison analysis...
+  Figure 3 saved.
+
+====== Analysis Summary ======
+1. Regular feedback with time delay:
+   - Delay introduces phase lag in the loop
+   - Can cause oscillation or instability
+   - Step response shows delayed reaction and overshoot
+
+2. Smith Predictor:
+   - Uses internal model Gm(s) to predict undelayed output
+   - Subtracts delayed model prediction, adds instantaneous prediction
+   - Controller effectively "sees" delay-free plant
+   - Result: response matches ideal case, shifted by tau
+
+3. Simulink models saved for GUI inspection:
+   - results/figures/Task08_Model_Delay.slx
+   - results/figures/Task08_Model_Smith.slx
+
+Task 8 completed.
